@@ -15,15 +15,15 @@ $(function() {
             it('have url', function() {
                 expect(obj.url).toBeDefined();
                 expect(obj.url).not.toBe('');
-            })
-        })
+            });
+        });
 
         allFeeds.forEach(function(obj){
             it('have name', function() {
                 expect(obj.name).toBeDefined();
                 expect(obj.name).not.toBe('');
-            })
-        })
+            });
+        });
     });
 
     //Test for hidden/display (css toggle) elements
