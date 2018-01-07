@@ -24,4 +24,4 @@
 - On your browser, open `localhost` and type in the index.html path (or follow guide on how to use your `localhost`)
 - Open `index.html` in your browser.
 
-- This site is also published at `github` [Link]: (https://adabonyan.github.io/Feed-Reader/) 
+- This site is also published at `github` [Link](https://adabonyan.github.io/Feed-Reader/) 
