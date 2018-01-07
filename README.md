@@ -16,5 +16,12 @@
 - A new feed must differ from preceeding feed.
 
 ## User Notes.
-- You can download this App to your device and run on localhost. To do this follow the instruction on github.
-- This site is also published at: https://adabonyan.github.io/Feed-Reader/ 
+- You can download this App to your device and run on `localhost` (a local server on your device). To do this follow these instructions (reference also to `github` and your `localhost`):
+- On your device, create a folder to hold the app files.
+- Go to [Link](https://github.com/adabonyan/Feed-Reader)
+- Click `Clone in Desktop` or `Download ZIP` (green button about the middle of the page on the right hand side)
+- On your device, open the folder to view files. 
+- On your browser, open `localhost` and type in the index.html path (or follow guide on how to use your `localhost`)
+- Open `index.html` in your browser.
+
+- This site is also published at `github` [Link]: (https://adabonyan.github.io/Feed-Reader/) 
