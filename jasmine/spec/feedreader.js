@@ -7,21 +7,18 @@ $(function() {
     //Test to ensure allFeeds variable are and not empty
     describe('RSS Feeds', function() {
         it('are defined', function() {
-            expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds).toBeTruthy();
         });
 
         allFeeds.forEach(function(obj){
             it('have url', function() {
-                expect(obj.url).toBeDefined();
-                expect(obj.url).not.toBe('');
+                expect(obj.url).toBeTruthy();
             });
         });
 
         allFeeds.forEach(function(obj){
             it('have name', function() {
-                expect(obj.name).toBeDefined();
-                expect(obj.name).not.toBe('');
+                expect(obj.name).toBeTruthy();
             });
         });
     });
@@ -30,33 +27,16 @@ $(function() {
     describe('The menu', function() {
         
         it('are hidden', function() {
-            elements = document.getElementsByClassName("menu-hidden");
-            nu = elements.length;
-            for(var i = 0; i < nu; i++) {
-                expect(elements[i].getAttribute("class")).toContain("menu-hidden");
-                expect(elements[i].getAttribute("class")).not.toContain("nenu-hidden");
-            }           
+            expect($('body').hasClass("menu-hidden")).toBeTruthy(); 
         });
 
-        body = document.getElementsByClassName("menu-hidden")[0];
-        menuIcon = document.getElementsByClassName('menu-icon-link')[0];
-        
-        $(document).ready(function(){
-            $(menuIcon).click(function(){
-                if ($(body).hasClass("menu-hidden")) {
-                    expect($(body).hasClass("menu-hidden").not.toBeTruthy());
-                    expect($(body).hasClass("slide-menu").toBeTruthy());
-                }                
-            });
-        });
-
-        $(document).ready(function(){
-            $(menuIcon).click(function(){
-                if (!$(body).hasClass("menu-hidden")) {
-                    expect($(body).hasClass("menu-hidden").toBeTruthy());
-                    expect($(body).hasClass("slide-menu").not.toBeTruthy());
-                }                
-            });
+        it('menu toggles', function() {
+            //First click dsplays body
+          $('.menu-icon-link').eq(0).trigger('click');
+          expect($('body').hasClass('menu-hidden')).toBeFalsy();
+          //Next click hides body
+          $('.menu-icon-link').eq(0).trigger('click');
+          expect($('body').hasClass('menu-hidden')).toBeTruthy();
         });
     });
 
@@ -66,8 +46,8 @@ $(function() {
             loadFeed(0, done);
         });
 
-        it('should load feed', function(done) {
-            expect($(".feed").children().length).toBeGreaterThan(0);
+        it('should have at least one entry', function(done) {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
         });
     });
